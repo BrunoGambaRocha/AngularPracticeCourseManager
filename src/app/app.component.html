@@ -1,15 +1,11 @@
-{{title}} <br/><br/><br/><br/>
 
-one-way data bindings: <br/><br/>
+{{ title }}
+<br/>
+one-way data bindings <input [ngModel]="nameFirst" name="nameFirst" > {{nameFirst}}
+<br/>
+two-way data bindings <input [(ngModel)]="nameLast" name="nameLast" > {{nameLast}} 
 
-{{nameFirst}}  <br/>
-<input [ngModel]="nameFirst" name="nameFirst" >  <br/><br/>
 
-{{nameFirst}}  <br/> 
-<input [ngModel]="nameFirst" name="nameOne" > Teste alteração one-way <br/><br/><br/>
-
-two-way data bindings: <br/><br/>
-{{nameLast}}  <br/>
-<input [(ngModel)]="nameLast" name="nameLast" > <br/>
-{{nameLast}}  <br/>
-<input [(ngModel)]="nameLast" name="nameTwo" > Teste alteração two-way <br/><br/><br/>
+<div class="container">
+  <app-course-list></app-course-list>
+</div>
