@@ -1,18 +1,27 @@
-import { Component, OnInit } from "@angular/core";
 import { Course } from "./courses";
+import { Component, OnInit } from "@angular/core";
+import { CourseService } from "./course.service";
 
 @Component({
     selector: 'app-course-list',
-    //template: '<h2>Course List - propriedade template - aqui não é uma boa prática de independência</h2>',
     templateUrl: './course-list.component.html'
 })
 export class CourseListComponent implements OnInit  {
-
-    imgPath: string = './assets/images/forms.png';
     
-    courses: Course[] = [];
+    filteredCourses: Course[] = [];
+
+    _courses: Course[] = [];
+    
+    _filterBy: string = '';
+
+    constructor(private courseService: CourseService) { };
 
     ngOnInit(): void {
+
+        this._courses = this.courseService.retrieveAll();
+        this.filteredCourses =  this._courses;
+
+        /* 
         this.courses = [
             {
                 id: 1,
@@ -35,6 +44,18 @@ export class CourseListComponent implements OnInit  {
                 releaseDate: 'January, 11, 1982'
             }
         ]
+        */ 
     }
+
+    set filter(value: string) { 
+        this._filterBy = value;
+
+        this.filteredCourses = this._courses.filter((course: Course) => course.name.toLocaleLowerCase().indexOf(this._filterBy.toLocaleLowerCase()) > -1);
+    }
+
+    get filter() { 
+        return this._filterBy;
+        
+    }    
 
 }

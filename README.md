@@ -6,6 +6,19 @@ Angular 8 / TypeScript / Node.js / Json / Material Design / Bootstrap / Font-Awe
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
 
+## Parte 3
+- Injeção de Dependência: 
+    -> `@Injectable` e `providedIn: 'root'` para criar a injeção
+    -> `constructor(private courseService: CourseService) { };` onde deseja obter o mesmo objeto
+- não é uma boa prática, nas classes de serviços utilizar variáveis que possam ser modificadas pelos metodos dela, utilizar variaveis estaticas que nao serão alteradas entre os metodos.
+- implementação do filtro da lista utilizando elemento two-way data binding
+- pipe - altera a forma de como a propriedade é exibida no template
+    -> ex. nativos  `| date: 'dd/MM/yyyy'` e `| lowercase`
+    -> personalizar um próprio pipe: 
+        criar: `@Pipe({ name: 'nomeDoPipe' })`, `implements PipeTransform`, `import { Pipe, PipeTransform } from '@angular/core';`
+        usar: `| nomeDoPipe: '-': ' '` e declarar a class do Pipe no module.ts correspondente
+
+
 ## Parte 2
 - diferença entre os atributos `template` e `templateUrl` do @Component
 - adicionar tag do component ao html -> Ex: no arquivo da class do componente, dar nome ao atributo `selector: 'app-course-list'` e chamar com a tag `<app-course-list></app-course-list>` no ponto do html que desejar exibir o elemento
@@ -14,7 +27,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - stop dev server and Run `ng serve`
 - criação de classe `Course` para representar um novo tipo
 - criação de array vazio do novo tipo Course: `courses: Course[] = [];`
-- implements `OnInit`
+- implements `OnInit` e `ngOnInit(): void`
 - estrutura de repetição de linhas: `<tr *ngFor="let course of courses"/>`
 - importar imagens para a pasta `src/assets/images`
 - passar parametro da variável para o atributo do elemento `<img [src]="course.imageUrl"`
