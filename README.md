@@ -6,6 +6,14 @@ Angular 8 / TypeScript / Node.js / Json / Material Design
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
 
+## Parte 1
+- interpolação -> Ex: {{variavel}}
+- importar módulos
+- components
+- One-way data binding -> Ex: <input [ngModel]="nameFirst" name="nameFirst" >
+- Two-way data binding -> Ex: <input [(ngModel)]="nameLast" name="nameLast" >
+
+
 ## Angular Structure 
 Presentation of the folder structure of an application's base project in Angular and important files
 - package.json / angular.json
