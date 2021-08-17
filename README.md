@@ -6,6 +6,22 @@ Angular 8 / TypeScript / Node.js / Json / Material Design / Bootstrap / Font-Awe
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
 
+## Parte 4
+- adicionada as classes components `app-nav-bar` e `error404Component`
+- rotas pelo `RouterModule`
+    -> não se usa tag `selector:` no component alvo quando se está utilizando rotas
+    -> no modules.ts, adicionar ao @NgModule, imports RouterModule, que espera recebeu um array de rotas
+        - rotas nativas, ex: `path:''` para raiz e `path:'**'` para Error404
+        - rotas personalizadas, ex: `path: 'destino', component: DestinoComponent`
+        - informar o destino da rota com `<router-outlet></router-outlet>`
+- rotas pelo `[routerLink]`
+    -> ex: atribuir o alvo com routerLink com os argumentos num array `<a [routerLink]="['/destino/destino_sub', objeto.id]" ...`
+            criar o componente para ser alvo dos links, declarar em `declarations` no module.ts
+            ainda no module.ts, em `RouterModule`, passar o path com o alvo e o id, `path: 'destino/destino_sub/:id', component: DestinoComponent`
+            na class alvo do link, `implements OnInit`, e a Injeção de dependência na class `constructor(private activatedRoute: ActivatedRoute) { }`
+            atribuindo uma class de estilo para o link ativo: `routerLinkActivate="activeExemplo"`
+
+
 ## Parte 3
 - Injeção de Dependência: 
     -> `@Injectable` e `providedIn: 'root'` para criar a injeção
