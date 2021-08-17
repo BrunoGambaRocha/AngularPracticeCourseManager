@@ -6,33 +6,43 @@ Angular 8 / TypeScript / Node.js / Json / Material Design / Bootstrap / Font-Awe
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
 
+## Parte 5
+- formulários e variáveis de template
+    - criado o método `retrieveById` em `CourseService`
+    - alterando o arquivo `course-info.component.html` com o formulário `<form #courseForm="ngForm" *ngIf="course" ...`
+    - validação dos campos e adicionando class aos elementos dinamicamente
+    - campos requeridos e tipos de valores esperados
+    - evento de botões, desabilitando botão 
+    - validação do formulário ao enviar
+
+
 ## Parte 4
 - adicionada as classes components `app-nav-bar` e `error404Component`
 - rotas pelo `RouterModule`
-    -> não se usa tag `selector:` no component alvo quando se está utilizando rotas
-    -> no modules.ts, adicionar ao @NgModule, imports RouterModule, que espera recebeu um array de rotas
+    - não se usa tag `selector:` no component alvo quando se está utilizando rotas
+    - no modules.ts, adicionar ao @NgModule, imports RouterModule, que espera recebeu um array de rotas
         - rotas nativas, ex: `path:''` para raiz e `path:'**'` para Error404
         - rotas personalizadas, ex: `path: 'destino', component: DestinoComponent`
         - informar o destino da rota com `<router-outlet></router-outlet>`
 - rotas pelo `[routerLink]`
-    -> ex: atribuir o alvo com routerLink com os argumentos num array `<a [routerLink]="['/destino/destino_sub', objeto.id]" ...`
-            criar o componente para ser alvo dos links, declarar em `declarations` no module.ts
-            ainda no module.ts, em `RouterModule`, passar o path com o alvo e o id, `path: 'destino/destino_sub/:id', component: DestinoComponent`
-            na class alvo do link, `implements OnInit`, e a Injeção de dependência na class `constructor(private activatedRoute: ActivatedRoute) { }`
-            atribuindo uma class de estilo para o link ativo: `routerLinkActivate="activeExemplo"`
+    - ex: atribuir o alvo com routerLink com os argumentos num array `<a [routerLink]="['/destino/destino_sub', objeto.id]" ...`
+            - criar o componente para ser alvo dos links, declarar em `declarations` no module.ts
+            - ainda no module.ts, em `RouterModule`, passar o path com o alvo e o id, `path: 'destino/destino_sub/:id', component: DestinoComponent`
+            - na class alvo do link, `implements OnInit`, e a Injeção de dependência na class `constructor(private activatedRoute: ActivatedRoute) { }`
+            - atribuindo uma class de estilo para o link ativo: `routerLinkActivate="activeExemplo"`
 
 
 ## Parte 3
 - Injeção de Dependência: 
-    -> `@Injectable` e `providedIn: 'root'` para criar a injeção
-    -> `constructor(private courseService: CourseService) { };` onde deseja obter o mesmo objeto
+    - `@Injectable` e `providedIn: 'root'` para criar a injeção
+    - `constructor(private courseService: CourseService) { };` onde deseja obter o mesmo objeto
 - não é uma boa prática, nas classes de serviços utilizar variáveis que possam ser modificadas pelos metodos dela, utilizar variaveis estaticas que nao serão alteradas entre os metodos.
 - implementação do filtro da lista utilizando elemento two-way data binding
 - pipe - altera a forma de como a propriedade é exibida no template
-    -> ex. nativos  `| date: 'dd/MM/yyyy'` e `| lowercase`
-    -> personalizar um próprio pipe: 
-        criar: `@Pipe({ name: 'nomeDoPipe' })`, `implements PipeTransform`, `import { Pipe, PipeTransform } from '@angular/core';`
-        usar: `| nomeDoPipe: '-': ' '` e declarar a class do Pipe no module.ts correspondente
+    - ex. nativos  `| date: 'dd/MM/yyyy'` e `| lowercase`
+    - personalizar um próprio pipe: 
+        - criar: `@Pipe({ name: 'nomeDoPipe' })`, `implements PipeTransform`, `import { Pipe, PipeTransform } from '@angular/core';`
+        - usar: `| nomeDoPipe: '-': ' '` e declarar a class do Pipe no module.ts correspondente
 
 
 ## Parte 2
