@@ -1,10 +1,23 @@
-# AngularPractiseCourseManager
-Angular 8 - Practice of Course Introduction to Angular 8 - Instrutor Weslley Holanda
+# AngularPracticeCourseManager
 
-Angular 8 / TypeScript / Node.js / Json / Material Design / Bootstrap / Font-Awesome
+Angular 8 - Practice of Course Introduction to Angular 8 - Instrutor Weslley Holanda
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
+
+<hr>
+
+## Tecnologias utilizadas
+- Angular 8 
+- TypeScript 
+- Node.js 
+- Json
+- Material Design
+- Bootstrap 
+- Font-Awesome
+
+
+<hr>
 
 ## Parte 5
 - formulários e variáveis de template
@@ -15,6 +28,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     - evento de botões, desabilitando botão 
     - validação do formulário ao enviar
 
+
+<hr>
 
 ## Parte 4
 - adicionada as classes components `app-nav-bar` e `error404Component`
@@ -32,6 +47,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
             - atribuindo uma class de estilo para o link ativo: `routerLinkActivate="activeExemplo"`
 
 
+<hr>
+
 ## Parte 3
 - Injeção de Dependência: 
     - `@Injectable` e `providedIn: 'root'` para criar a injeção
@@ -44,6 +61,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
         - criar: `@Pipe({ name: 'nomeDoPipe' })`, `implements PipeTransform`, `import { Pipe, PipeTransform } from '@angular/core';`
         - usar: `| nomeDoPipe: '-': ' '` e declarar a class do Pipe no module.ts correspondente
 
+
+<hr>
 
 ## Parte 2
 - diferença entre os atributos `template` e `templateUrl` do @Component
@@ -62,6 +81,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - atributo `styleUrls` do @Component recebe um array de folhas de estilos
 
 
+<hr>
+
 ## Parte 1
 - interpolação -> Ex: {{variavel}}
 - importar módulos
@@ -70,6 +91,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Two-way data binding -> Ex: <input [(ngModel)]="nameLast" name="nameLast" >
 
 
+<hr>
+
 ## Angular Structure 
 Presentation of the folder structure of an application's base project in Angular and important files
 - package.json / angular.json
@@ -77,6 +100,8 @@ Presentation of the folder structure of an application's base project in Angular
 - src / assets
 - app / app.module.ts / app.component.ts / app.component.html / app.component.css / app.component.spec.ts
 
+
+<hr>
 
 ## Angular 8 - Base Project
 - Create project `ng new NAME_PROJECT`
